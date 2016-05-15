@@ -17,7 +17,7 @@ namespace ISO605_API.Models
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public competencia()
         {
-            this.candidatoes = new HashSet<candidato>();
+            this.candidatos = new HashSet<candidato>();
         }
     
         public System.Guid competencia_id { get; set; }
@@ -25,6 +25,6 @@ namespace ISO605_API.Models
         public string estado { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<candidato> candidatoes { get; set; }
+        public virtual ICollection<candidato> candidatos { get; set; }
     }
 }
