@@ -167,6 +167,12 @@
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Controllers\CandidatosController.cs" />
     <Compile Include="Controllers\CapacitacionesController.cs" />
+    <Compile Include="Controllers\CompetenciasController.cs" />
+    <Compile Include="Controllers\DepartamentosController.cs" />
+    <Compile Include="Controllers\EmpleadosController.cs" />
+    <Compile Include="Controllers\ExperienciaLaboralController.cs" />
+    <Compile Include="Controllers\IdiomasController.cs" />
+    <Compile Include="Controllers\PosicionesController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
