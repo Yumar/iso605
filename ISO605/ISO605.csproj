@@ -102,6 +102,7 @@
       <DependentUpon>MainPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="Models\ApiClients\AbstractClient.cs" />
+    <Compile Include="Models\ApiClients\ClientUtil.cs" />
     <Compile Include="Models\Competencias.cs" />
     <Compile Include="Models\ApiClients\CompetenciasClient.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
