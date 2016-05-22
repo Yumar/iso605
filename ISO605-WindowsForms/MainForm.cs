@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using ISO605_WindowsForms.Views;
 
 namespace ISO605_WindowsForms
 {
@@ -30,6 +31,12 @@ namespace ISO605_WindowsForms
         private void Form1_Load(object sender, EventArgs e)
         {
 
+        }
+
+        private void competenciasToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            CompetenciaCRUDForm competenciaForm = new CompetenciaCRUDForm();
+            competenciaForm.Show();
         }
     }
 }
