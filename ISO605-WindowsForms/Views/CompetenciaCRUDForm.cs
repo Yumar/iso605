@@ -1,4 +1,4 @@
-﻿using System;
+﻿using System; 
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -14,10 +14,12 @@ namespace ISO605_WindowsForms.Views
     public partial class CompetenciaCRUDForm : Form
     {
         private ISO605Entities dbContext;
+        private competencia entity;
         public CompetenciaCRUDForm()
         {
             InitializeComponent();
             dbContext = new ISO605Entities();
+            entity = new competencia();
             loadGridData();     
         }
 
@@ -34,19 +36,49 @@ namespace ISO605_WindowsForms.Views
 
         private void LimpiarBtn_Click(object sender, EventArgs e)
         {
-            this.textBox1.ResetText();
-            this.comboBox1.ResetText();
+            reset();
         }
 
         private void GuardarBtn_Click(object sender, EventArgs e)
         {
-            competencia c = new competencia();
-            c.competencia_id = new Guid();
-            c.descripcion = textBox1.Text;
-            c.estado = comboBox1.Text;
-            dbContext.competencias.Add(c);
-            dbContext.SaveChanges();
+            guardarCompetenciaActual();
+            reset();
             loadGridData();
+        }
+
+        private void guardarCompetenciaActual() {
+            bindFromUI();
+            if (this.entity.competencia_id == Guid.Empty)
+            {            
+                this.entity.competencia_id = Guid.NewGuid();
+                dbContext.competencias.Add(this.entity);
+            }
+            else {
+                competencia c = dbContext.competencias.Find(this.entity.competencia_id);
+                dbContext.Entry(c).CurrentValues.SetValues(this.entity);
+            }
+            dbContext.SaveChanges();
+            
+        }
+
+        private void bindFromUI() {
+            entity.descripcion = textBox1.Text;
+            entity.estado = comboBox1.Text;
+        }
+        private void bindToUI() {
+            textBox1.Text = entity.descripcion;
+            comboBox1.Text = entity.estado;
+        }
+
+        private void reset() {
+            this.textBox1.ResetText();
+            this.comboBox1.ResetText();
+            this.entity = new competencia();
+        }
+
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
         }
     }
 }

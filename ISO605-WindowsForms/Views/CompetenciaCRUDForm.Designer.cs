@@ -30,15 +30,15 @@
         {
             this.components = new System.ComponentModel.Container();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.GuardarBtn = new System.Windows.Forms.Button();
-            this.LimpiarBtn = new System.Windows.Forms.Button();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.DescripcionLbl = new System.Windows.Forms.Label();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.DescripcionLbl = new System.Windows.Forms.Label();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.LimpiarBtn = new System.Windows.Forms.Button();
+            this.GuardarBtn = new System.Windows.Forms.Button();
+            this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.button1 = new System.Windows.Forms.Button();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.competenciaidDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.descripcionDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.estadoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -64,6 +64,62 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Competencia";
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(414, 21);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(40, 13);
+            this.label1.TabIndex = 5;
+            this.label1.Text = "Estado";
+            // 
+            // comboBox1
+            // 
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Items.AddRange(new object[] {
+            "Activo",
+            "Inactivo"});
+            this.comboBox1.Location = new System.Drawing.Point(414, 40);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(121, 21);
+            this.comboBox1.TabIndex = 4;
+            // 
+            // DescripcionLbl
+            // 
+            this.DescripcionLbl.AutoSize = true;
+            this.DescripcionLbl.Location = new System.Drawing.Point(7, 22);
+            this.DescripcionLbl.Name = "DescripcionLbl";
+            this.DescripcionLbl.Size = new System.Drawing.Size(63, 13);
+            this.DescripcionLbl.TabIndex = 3;
+            this.DescripcionLbl.Text = "Descripcion";
+            // 
+            // textBox1
+            // 
+            this.textBox1.Location = new System.Drawing.Point(7, 41);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(401, 20);
+            this.textBox1.TabIndex = 2;
+            // 
+            // LimpiarBtn
+            // 
+            this.LimpiarBtn.Location = new System.Drawing.Point(379, 100);
+            this.LimpiarBtn.Name = "LimpiarBtn";
+            this.LimpiarBtn.Size = new System.Drawing.Size(75, 23);
+            this.LimpiarBtn.TabIndex = 1;
+            this.LimpiarBtn.Text = "Limpiar";
+            this.LimpiarBtn.UseVisualStyleBackColor = true;
+            this.LimpiarBtn.Click += new System.EventHandler(this.LimpiarBtn_Click);
+            // 
+            // GuardarBtn
+            // 
+            this.GuardarBtn.Location = new System.Drawing.Point(460, 100);
+            this.GuardarBtn.Name = "GuardarBtn";
+            this.GuardarBtn.Size = new System.Drawing.Size(75, 23);
+            this.GuardarBtn.TabIndex = 0;
+            this.GuardarBtn.Text = "Guardar";
+            this.GuardarBtn.UseVisualStyleBackColor = true;
+            this.GuardarBtn.Click += new System.EventHandler(this.GuardarBtn_Click);
+            // 
             // groupBox2
             // 
             this.groupBox2.Controls.Add(this.button1);
@@ -74,6 +130,16 @@
             this.groupBox2.TabIndex = 1;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Lista de Competencias";
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(405, 19);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(130, 23);
+            this.button1.TabIndex = 6;
+            this.button1.Text = "Recargar Lista";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // dataGridView1
             // 
@@ -90,74 +156,10 @@
             this.dataGridView1.Location = new System.Drawing.Point(7, 52);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
+            this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGridView1.Size = new System.Drawing.Size(529, 237);
             this.dataGridView1.TabIndex = 0;
-            // 
-            // GuardarBtn
-            // 
-            this.GuardarBtn.Location = new System.Drawing.Point(460, 100);
-            this.GuardarBtn.Name = "GuardarBtn";
-            this.GuardarBtn.Size = new System.Drawing.Size(75, 23);
-            this.GuardarBtn.TabIndex = 0;
-            this.GuardarBtn.Text = "Guardar";
-            this.GuardarBtn.UseVisualStyleBackColor = true;
-            this.GuardarBtn.Click += new System.EventHandler(this.GuardarBtn_Click);
-            // 
-            // LimpiarBtn
-            // 
-            this.LimpiarBtn.Location = new System.Drawing.Point(379, 100);
-            this.LimpiarBtn.Name = "LimpiarBtn";
-            this.LimpiarBtn.Size = new System.Drawing.Size(75, 23);
-            this.LimpiarBtn.TabIndex = 1;
-            this.LimpiarBtn.Text = "Limpiar";
-            this.LimpiarBtn.UseVisualStyleBackColor = true;
-            this.LimpiarBtn.Click += new System.EventHandler(this.LimpiarBtn_Click);
-            // 
-            // textBox1
-            // 
-            this.textBox1.Location = new System.Drawing.Point(7, 41);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(401, 20);
-            this.textBox1.TabIndex = 2;
-            // 
-            // DescripcionLbl
-            // 
-            this.DescripcionLbl.AutoSize = true;
-            this.DescripcionLbl.Location = new System.Drawing.Point(7, 22);
-            this.DescripcionLbl.Name = "DescripcionLbl";
-            this.DescripcionLbl.Size = new System.Drawing.Size(63, 13);
-            this.DescripcionLbl.TabIndex = 3;
-            this.DescripcionLbl.Text = "Descripcion";
-            // 
-            // comboBox1
-            // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Items.AddRange(new object[] {
-            "Activo",
-            "Inactivo"});
-            this.comboBox1.Location = new System.Drawing.Point(414, 40);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(121, 21);
-            this.comboBox1.TabIndex = 4;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(414, 21);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(40, 13);
-            this.label1.TabIndex = 5;
-            this.label1.Text = "Estado";
-            // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(405, 19);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(130, 23);
-            this.button1.TabIndex = 6;
-            this.button1.Text = "Recargar Lista";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
             // competenciaidDataGridViewTextBoxColumn
             // 
