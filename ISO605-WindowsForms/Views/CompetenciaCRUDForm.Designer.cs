@@ -30,6 +30,7 @@
         {
             this.components = new System.ComponentModel.Container();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.EliminarBtn = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.DescripcionLbl = new System.Windows.Forms.Label();
@@ -42,7 +43,6 @@
             this.descripcionDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.estadoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.competenciaBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.EliminarBtn = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
@@ -64,6 +64,16 @@
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Competencia";
+            // 
+            // EliminarBtn
+            // 
+            this.EliminarBtn.Location = new System.Drawing.Point(298, 100);
+            this.EliminarBtn.Name = "EliminarBtn";
+            this.EliminarBtn.Size = new System.Drawing.Size(75, 23);
+            this.EliminarBtn.TabIndex = 6;
+            this.EliminarBtn.Text = "Eliminar";
+            this.EliminarBtn.UseVisualStyleBackColor = true;
+            this.EliminarBtn.Click += new System.EventHandler(this.EliminarBtn_Click);
             // 
             // label1
             // 
@@ -159,7 +169,7 @@
             this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGridView1.Size = new System.Drawing.Size(529, 237);
             this.dataGridView1.TabIndex = 0;
-            this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
+            this.dataGridView1.SelectionChanged += new System.EventHandler(this.dataGridView1_SelectionChanged);
             // 
             // descripcionDataGridViewTextBoxColumn
             // 
@@ -182,16 +192,6 @@
             // competenciaBindingSource
             // 
             this.competenciaBindingSource.DataSource = typeof(ISO605_WindowsForms.Models.competencia);
-            // 
-            // EliminarBtn
-            // 
-            this.EliminarBtn.Location = new System.Drawing.Point(298, 100);
-            this.EliminarBtn.Name = "EliminarBtn";
-            this.EliminarBtn.Size = new System.Drawing.Size(75, 23);
-            this.EliminarBtn.TabIndex = 6;
-            this.EliminarBtn.Text = "Eliminar";
-            this.EliminarBtn.UseVisualStyleBackColor = true;
-            this.EliminarBtn.Click += new System.EventHandler(this.EliminarBtn_Click);
             // 
             // CompetenciaCRUDForm
             // 

@@ -20,32 +20,26 @@ namespace ISO605_WindowsForms.Views
             InitializeComponent();
             dbContext = new ISO605Entities();
             entity = new competencia();
-            loadGridData();     
+            loadGridData();
         }
 
         private void loadGridData() {
             this.dataGridView1.DataSource = this.dbContext.competencias.ToList();
         }
-
-
-
         private void button1_Click(object sender, EventArgs e)
         {
             loadGridData();
         }
-
         private void LimpiarBtn_Click(object sender, EventArgs e)
         {
             reset();
         }
-
         private void GuardarBtn_Click(object sender, EventArgs e)
         {
             guardarCompetenciaActual();
             reset();
             loadGridData();
         }
-
         private void guardarCompetenciaActual() {
             bindFromUI();
             if (this.entity.competencia_id == Guid.Empty)
@@ -60,7 +54,6 @@ namespace ISO605_WindowsForms.Views
             dbContext.SaveChanges();
             
         }
-
         private void bindFromUI() {
             entity.descripcion = textBox1.Text;
             entity.estado = comboBox1.Text;
@@ -76,25 +69,28 @@ namespace ISO605_WindowsForms.Views
             this.entity = new competencia();
         }
 
-        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-            if (this.competenciaBindingSource.Current != null)
-            {
-                competencia c = (competencia)this.competenciaBindingSource.Current;
-                dbContext.competencias.Remove(c);
-            }
-        }
-
         private void EliminarBtn_Click(object sender, EventArgs e)
         {
-            if (this.entity.competencia_id != Guid.Empty)
+            if (this.entity != null)
             {
                 dbContext.competencias.Remove(this.entity);
+                dbContext.SaveChanges();
                 reset();
                 loadGridData();
             }
             else {
+                MessageBox.Show("Debe seleccionar un registro para ser eliminado", "No registro seleccionado");
+            }
 
+        }
+
+        private void dataGridView1_SelectionChanged(object sender, EventArgs e)
+        {
+            if (this.dataGridView1.SelectedRows.Count > 0)
+            {
+                var selectedRow = this.dataGridView1.SelectedRows[0];
+                this.entity = (competencia)selectedRow.DataBoundItem;
+                bindToUI();
             }
 
         }
