@@ -78,6 +78,24 @@ namespace ISO605_WindowsForms.Views
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
+            if (this.competenciaBindingSource.Current != null)
+            {
+                competencia c = (competencia)this.competenciaBindingSource.Current;
+                dbContext.competencias.Remove(c);
+            }
+        }
+
+        private void EliminarBtn_Click(object sender, EventArgs e)
+        {
+            if (this.entity.competencia_id != Guid.Empty)
+            {
+                dbContext.competencias.Remove(this.entity);
+                reset();
+                loadGridData();
+            }
+            else {
+
+            }
 
         }
     }
