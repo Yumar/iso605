@@ -38,5 +38,11 @@ namespace ISO605_WindowsForms
             CompetenciaCRUDForm competenciaForm = new CompetenciaCRUDForm();
             competenciaForm.Show();
         }
+
+        private void idiomasToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            IdiomaCRUDForm idiomaForm = new IdiomaCRUDForm();
+            idiomaForm.Show();
+        }
     }
 }

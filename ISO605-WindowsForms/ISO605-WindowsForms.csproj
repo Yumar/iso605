@@ -104,11 +104,11 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Views\CandidatoCRUDForm.cs">
+    <Compile Include="Views\IdiomaCRUDForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Views\CandidatoCRUDForm.Designer.cs">
-      <DependentUpon>CandidatoCRUDForm.cs</DependentUpon>
+    <Compile Include="Views\IdiomaCRUDForm.Designer.cs">
+      <DependentUpon>IdiomaCRUDForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Views\CompetenciaCRUDForm.cs">
       <SubType>Form</SubType>
@@ -128,8 +128,8 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="Views\CandidatoCRUDForm.resx">
-      <DependentUpon>CandidatoCRUDForm.cs</DependentUpon>
+    <EmbeddedResource Include="Views\IdiomaCRUDForm.resx">
+      <DependentUpon>IdiomaCRUDForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Views\CompetenciaCRUDForm.resx">
       <DependentUpon>CompetenciaCRUDForm.cs</DependentUpon>
@@ -152,6 +152,7 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <None Include="Properties\DataSources\ISO605_WindowsForms.Models.idioma.datasource" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
