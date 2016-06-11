@@ -177,6 +177,7 @@
             this.departamentosToolStripMenuItem.Name = "departamentosToolStripMenuItem";
             this.departamentosToolStripMenuItem.Size = new System.Drawing.Size(155, 22);
             this.departamentosToolStripMenuItem.Text = "Departamentos";
+            this.departamentosToolStripMenuItem.Click += new System.EventHandler(this.departamentosToolStripMenuItem_Click);
             // 
             // panel1
             // 

@@ -15,16 +15,21 @@ namespace ISO605_WindowsForms.Views
     {
         private ISO605Entities dbContext;
         private departamento entity;
+        private List<departamento> departamentos;
         public DepartamentoCRUDForm()
         {
             InitializeComponent();
             dbContext = new ISO605Entities();
-            entity = new departamento();
+            entity = new departamento();            
             loadGridData();
         }
 
         private void loadGridData() {
-            this.dataGridView1.DataSource = this.dbContext.departamentoes.ToList<departamento>();
+            departamentos = this.dbContext.departamentoes.ToList<departamento>();
+            this.dataGridView1.DataSource = departamentos;
+
+            departamentos.Remove(entity);
+            comboBox1.DataSource = departamentos;
         }
         private void button1_Click(object sender, EventArgs e)
         {
@@ -55,12 +60,17 @@ namespace ISO605_WindowsForms.Views
             
         }
         private void bindFromUI() {
-            //entity.nombre = textBox1.Text;
-            //entity.estado = comboBox1.Text;
+            entity.descripcion = textBox1.Text;
+
+            if(comboBox1.SelectedItem != null)
+            {
+                entity.dependencia = ((Guid)comboBox1.SelectedItem);
+            }
+            
         }
         private void bindToUI() {
-            //textBox1.Text = entity.nombre;
-            //comboBox1.Text = entity.estado;
+            textBox1.Text = entity.descripcion;
+            comboBox1.SelectedItem = entity.dependencia;
         }
 
         private void reset() {

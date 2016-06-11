@@ -44,5 +44,11 @@ namespace ISO605_WindowsForms
             IdiomaCRUDForm idiomaForm = new IdiomaCRUDForm();
             idiomaForm.Show();
         }
+
+        private void departamentosToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            DepartamentoCRUDForm departamentoForm = new DepartamentoCRUDForm();
+            departamentoForm.Show();
+        }
     }
 }

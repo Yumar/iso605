@@ -122,6 +122,12 @@
     <Compile Include="Views\CompetenciaCRUDForm.Designer.cs">
       <DependentUpon>CompetenciaCRUDForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Views\PuestoCRUDForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\PuestoCRUDForm.Designer.cs">
+      <DependentUpon>PuestoCRUDForm.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -142,6 +148,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Views\CompetenciaCRUDForm.resx">
       <DependentUpon>CompetenciaCRUDForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\PuestoCRUDForm.resx">
+      <DependentUpon>PuestoCRUDForm.cs</DependentUpon>
     </EmbeddedResource>
     <EntityDeploy Include="Models\ISO605Model.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
@@ -164,6 +173,7 @@
     </Compile>
     <None Include="Properties\DataSources\ISO605_WindowsForms.Models.departamento.datasource" />
     <None Include="Properties\DataSources\ISO605_WindowsForms.Models.idioma.datasource" />
+    <None Include="Properties\DataSources\ISO605_WindowsForms.Models.posicion.datasource" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
