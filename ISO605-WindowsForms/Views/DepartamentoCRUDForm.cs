@@ -64,7 +64,7 @@ namespace ISO605_WindowsForms.Views
 
             if(comboBox1.SelectedItem != null)
             {
-                entity.dependencia = ((Guid)comboBox1.SelectedItem);
+                entity.dependencia = ((Guid)comboBox1.SelectedValue);
             }
             
         }

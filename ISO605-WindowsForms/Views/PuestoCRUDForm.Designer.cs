@@ -39,15 +39,15 @@
             this.estadoCombo = new System.Windows.Forms.ComboBox();
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
-            this.salarioField = new System.Windows.Forms.TextBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.salarioMinimoField = new System.Windows.Forms.TextBox();
+            this.salarioMaximoField = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
-            this.comboBox3 = new System.Windows.Forms.ComboBox();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
+            this.departamentoCombo = new System.Windows.Forms.ComboBox();
+            this.guardarBtn = new System.Windows.Forms.Button();
+            this.limpiarBtn = new System.Windows.Forms.Button();
+            this.eliminarBtn = new System.Windows.Forms.Button();
             this.departamentoBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.puestosTable = new System.Windows.Forms.DataGridView();
             this.posicionBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.nombreDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.riesgoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -58,19 +58,19 @@
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.departamentoBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.puestosTable)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.posicionBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.button3);
-            this.groupBox1.Controls.Add(this.button2);
-            this.groupBox1.Controls.Add(this.button1);
-            this.groupBox1.Controls.Add(this.comboBox3);
+            this.groupBox1.Controls.Add(this.eliminarBtn);
+            this.groupBox1.Controls.Add(this.limpiarBtn);
+            this.groupBox1.Controls.Add(this.guardarBtn);
+            this.groupBox1.Controls.Add(this.departamentoCombo);
             this.groupBox1.Controls.Add(this.label6);
-            this.groupBox1.Controls.Add(this.textBox3);
-            this.groupBox1.Controls.Add(this.salarioField);
+            this.groupBox1.Controls.Add(this.salarioMaximoField);
+            this.groupBox1.Controls.Add(this.salarioMinimoField);
             this.groupBox1.Controls.Add(this.label5);
             this.groupBox1.Controls.Add(this.label4);
             this.groupBox1.Controls.Add(this.estadoCombo);
@@ -85,10 +85,11 @@
             this.groupBox1.TabIndex = 1;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Puesto";
+            this.groupBox1.Enter += new System.EventHandler(this.groupBox1_Enter);
             // 
             // groupBox2
             // 
-            this.groupBox2.Controls.Add(this.dataGridView1);
+            this.groupBox2.Controls.Add(this.puestosTable);
             this.groupBox2.Location = new System.Drawing.Point(13, 182);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(539, 271);
@@ -171,19 +172,19 @@
             this.label5.TabIndex = 7;
             this.label5.Text = "Salario Maximo";
             // 
-            // salarioField
+            // salarioMinimoField
             // 
-            this.salarioField.Location = new System.Drawing.Point(13, 90);
-            this.salarioField.Name = "salarioField";
-            this.salarioField.Size = new System.Drawing.Size(156, 20);
-            this.salarioField.TabIndex = 8;
+            this.salarioMinimoField.Location = new System.Drawing.Point(13, 90);
+            this.salarioMinimoField.Name = "salarioMinimoField";
+            this.salarioMinimoField.Size = new System.Drawing.Size(156, 20);
+            this.salarioMinimoField.TabIndex = 8;
             // 
-            // textBox3
+            // salarioMaximoField
             // 
-            this.textBox3.Location = new System.Drawing.Point(175, 89);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(152, 20);
-            this.textBox3.TabIndex = 9;
+            this.salarioMaximoField.Location = new System.Drawing.Point(175, 89);
+            this.salarioMaximoField.Name = "salarioMaximoField";
+            this.salarioMaximoField.Size = new System.Drawing.Size(152, 20);
+            this.salarioMaximoField.TabIndex = 9;
             // 
             // label6
             // 
@@ -194,67 +195,70 @@
             this.label6.TabIndex = 10;
             this.label6.Text = "Departamento";
             // 
-            // comboBox3
+            // departamentoCombo
             // 
-            this.comboBox3.DataSource = this.departamentoBindingSource;
-            this.comboBox3.DisplayMember = "descripcion";
-            this.comboBox3.FormattingEnabled = true;
-            this.comboBox3.Location = new System.Drawing.Point(333, 89);
-            this.comboBox3.Name = "comboBox3";
-            this.comboBox3.Size = new System.Drawing.Size(201, 21);
-            this.comboBox3.TabIndex = 11;
-            this.comboBox3.ValueMember = "departamento_id";
+            this.departamentoCombo.DataSource = this.departamentoBindingSource;
+            this.departamentoCombo.DisplayMember = "descripcion";
+            this.departamentoCombo.FormattingEnabled = true;
+            this.departamentoCombo.Location = new System.Drawing.Point(333, 89);
+            this.departamentoCombo.Name = "departamentoCombo";
+            this.departamentoCombo.Size = new System.Drawing.Size(201, 21);
+            this.departamentoCombo.TabIndex = 11;
+            this.departamentoCombo.ValueMember = "departamento_id";
             // 
-            // button1
+            // guardarBtn
             // 
-            this.button1.Location = new System.Drawing.Point(459, 130);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 12;
-            this.button1.Text = "Guardar";
-            this.button1.UseVisualStyleBackColor = true;
+            this.guardarBtn.Location = new System.Drawing.Point(459, 130);
+            this.guardarBtn.Name = "guardarBtn";
+            this.guardarBtn.Size = new System.Drawing.Size(75, 23);
+            this.guardarBtn.TabIndex = 12;
+            this.guardarBtn.Text = "Guardar";
+            this.guardarBtn.UseVisualStyleBackColor = true;
+            this.guardarBtn.Click += new System.EventHandler(this.guardarBtn_Click);
             // 
-            // button2
+            // limpiarBtn
             // 
-            this.button2.Location = new System.Drawing.Point(378, 130);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(75, 23);
-            this.button2.TabIndex = 13;
-            this.button2.Text = "Limpiar";
-            this.button2.UseVisualStyleBackColor = true;
+            this.limpiarBtn.Location = new System.Drawing.Point(378, 130);
+            this.limpiarBtn.Name = "limpiarBtn";
+            this.limpiarBtn.Size = new System.Drawing.Size(75, 23);
+            this.limpiarBtn.TabIndex = 13;
+            this.limpiarBtn.Text = "Limpiar";
+            this.limpiarBtn.UseVisualStyleBackColor = true;
+            this.limpiarBtn.Click += new System.EventHandler(this.limpiarBtn_Click);
             // 
-            // button3
+            // eliminarBtn
             // 
-            this.button3.Location = new System.Drawing.Point(297, 130);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(75, 23);
-            this.button3.TabIndex = 14;
-            this.button3.Text = "Eliminar";
-            this.button3.UseVisualStyleBackColor = true;
+            this.eliminarBtn.Location = new System.Drawing.Point(297, 130);
+            this.eliminarBtn.Name = "eliminarBtn";
+            this.eliminarBtn.Size = new System.Drawing.Size(75, 23);
+            this.eliminarBtn.TabIndex = 14;
+            this.eliminarBtn.Text = "Eliminar";
+            this.eliminarBtn.UseVisualStyleBackColor = true;
+            this.eliminarBtn.Click += new System.EventHandler(this.eliminarBtn_Click);
             // 
             // departamentoBindingSource
             // 
             this.departamentoBindingSource.DataSource = typeof(ISO605_WindowsForms.Models.departamento);
             // 
-            // dataGridView1
+            // puestosTable
             // 
-            this.dataGridView1.AllowUserToAddRows = false;
-            this.dataGridView1.AllowUserToDeleteRows = false;
-            this.dataGridView1.AutoGenerateColumns = false;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.puestosTable.AllowUserToAddRows = false;
+            this.puestosTable.AllowUserToDeleteRows = false;
+            this.puestosTable.AutoGenerateColumns = false;
+            this.puestosTable.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.puestosTable.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.nombreDataGridViewTextBoxColumn,
             this.riesgoDataGridViewTextBoxColumn,
             this.salariominimoDataGridViewTextBoxColumn,
             this.salariomaximoDataGridViewTextBoxColumn,
             this.departamentoDataGridViewTextBoxColumn,
             this.estadoDataGridViewTextBoxColumn});
-            this.dataGridView1.DataSource = this.posicionBindingSource;
-            this.dataGridView1.Location = new System.Drawing.Point(7, 20);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.ReadOnly = true;
-            this.dataGridView1.Size = new System.Drawing.Size(526, 245);
-            this.dataGridView1.TabIndex = 0;
+            this.puestosTable.DataSource = this.posicionBindingSource;
+            this.puestosTable.Location = new System.Drawing.Point(7, 20);
+            this.puestosTable.Name = "puestosTable";
+            this.puestosTable.ReadOnly = true;
+            this.puestosTable.Size = new System.Drawing.Size(526, 245);
+            this.puestosTable.TabIndex = 0;
             // 
             // posicionBindingSource
             // 
@@ -325,7 +329,7 @@
             this.groupBox1.PerformLayout();
             this.groupBox2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.departamentoBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.puestosTable)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.posicionBindingSource)).EndInit();
             this.ResumeLayout(false);
 
@@ -334,13 +338,13 @@
         #endregion
 
         private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.ComboBox comboBox3;
+        private System.Windows.Forms.Button eliminarBtn;
+        private System.Windows.Forms.Button limpiarBtn;
+        private System.Windows.Forms.Button guardarBtn;
+        private System.Windows.Forms.ComboBox departamentoCombo;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.TextBox salarioField;
+        private System.Windows.Forms.TextBox salarioMaximoField;
+        private System.Windows.Forms.TextBox salarioMinimoField;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.ComboBox estadoCombo;
@@ -351,7 +355,7 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.BindingSource departamentoBindingSource;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView puestosTable;
         private System.Windows.Forms.DataGridViewTextBoxColumn nombreDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn riesgoDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn salariominimoDataGridViewTextBoxColumn;

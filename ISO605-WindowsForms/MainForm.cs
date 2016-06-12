@@ -50,5 +50,11 @@ namespace ISO605_WindowsForms
             DepartamentoCRUDForm departamentoForm = new DepartamentoCRUDForm();
             departamentoForm.Show();
         }
+
+        private void puestosToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            PuestoCRUDForm puestoForm = new PuestoCRUDForm();
+            puestoForm.Show();
+        }
     }
 }

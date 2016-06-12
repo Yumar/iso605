@@ -40,7 +40,6 @@
             this.nuevaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.listaToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.mantenimientosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.competenciasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.idiomasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.capacitacionesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.puestosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -137,7 +136,6 @@
             // mantenimientosToolStripMenuItem
             // 
             this.mantenimientosToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.competenciasToolStripMenuItem,
             this.idiomasToolStripMenuItem,
             this.capacitacionesToolStripMenuItem,
             this.puestosToolStripMenuItem,
@@ -145,13 +143,6 @@
             this.mantenimientosToolStripMenuItem.Name = "mantenimientosToolStripMenuItem";
             this.mantenimientosToolStripMenuItem.Size = new System.Drawing.Size(106, 20);
             this.mantenimientosToolStripMenuItem.Text = "Mantenimientos";
-            // 
-            // competenciasToolStripMenuItem
-            // 
-            this.competenciasToolStripMenuItem.Name = "competenciasToolStripMenuItem";
-            this.competenciasToolStripMenuItem.Size = new System.Drawing.Size(155, 22);
-            this.competenciasToolStripMenuItem.Text = "Competencias";
-            this.competenciasToolStripMenuItem.Click += new System.EventHandler(this.competenciasToolStripMenuItem_Click);
             // 
             // idiomasToolStripMenuItem
             // 
@@ -171,6 +162,7 @@
             this.puestosToolStripMenuItem.Name = "puestosToolStripMenuItem";
             this.puestosToolStripMenuItem.Size = new System.Drawing.Size(155, 22);
             this.puestosToolStripMenuItem.Text = "Puestos";
+            this.puestosToolStripMenuItem.Click += new System.EventHandler(this.puestosToolStripMenuItem_Click);
             // 
             // departamentosToolStripMenuItem
             // 
@@ -218,7 +210,6 @@
         private System.Windows.Forms.ToolStripMenuItem nuevaToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem listaToolStripMenuItem1;
         private System.Windows.Forms.ToolStripMenuItem mantenimientosToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem competenciasToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem idiomasToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem capacitacionesToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem puestosToolStripMenuItem;
