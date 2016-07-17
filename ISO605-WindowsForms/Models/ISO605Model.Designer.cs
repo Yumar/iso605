@@ -1,4 +1,4 @@
-﻿// T4 code generation is enabled for model 'C:\Users\Jumar\Documents\Visual Studio 2015\Projects\ISO605\ISO605-WindowsForms\Models\ISO605Model.edmx'. 
+﻿// T4 code generation is enabled for model 'C:\Users\yumarx\Documents\Visual Studio 2015\Projects\ISO605\ISO605-WindowsForms\Models\ISO605Model.edmx'. 
 // To enable legacy code generation, change the value of the 'Code Generation Strategy' designer
 // property to 'Legacy ObjectContext'. This property is available in the Properties Window when the model
 // is open in the designer.

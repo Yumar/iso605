@@ -33,5 +33,6 @@ namespace ISO605_WindowsForms.Models
         public virtual DbSet<experiencia_laboral> experiencia_laboral { get; set; }
         public virtual DbSet<idioma> idiomas { get; set; }
         public virtual DbSet<posicion> posicions { get; set; }
+        public virtual DbSet<usuario> usuarios { get; set; }
     }
 }

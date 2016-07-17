@@ -102,13 +102,29 @@
     <Compile Include="Models\posicion.cs">
       <DependentUpon>ISO605Model.tt</DependentUpon>
     </Compile>
+    <Compile Include="Models\usuario.cs">
+      <DependentUpon>ISO605Model.tt</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Utils\CalendarGrid.cs" />
     <Compile Include="Views\DepartamentoCRUDForm.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Views\DepartamentoCRUDForm.Designer.cs">
       <DependentUpon>DepartamentoCRUDForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\NuevoCandidatoForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\NuevoCandidatoForm.Designer.cs">
+      <DependentUpon>NuevoCandidatoForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\UsuarioCRUDForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\UsuarioCRUDForm.Designer.cs">
+      <DependentUpon>UsuarioCRUDForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Views\IdiomaCRUDForm.cs">
       <SubType>Form</SubType>
@@ -121,6 +137,12 @@
     </Compile>
     <Compile Include="Views\CompetenciaCRUDForm.Designer.cs">
       <DependentUpon>CompetenciaCRUDForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\LoginForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\LoginForm.Designer.cs">
+      <DependentUpon>LoginForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Views\NuevoEmpleadoForm.cs">
       <SubType>Form</SubType>
@@ -149,11 +171,20 @@
     <EmbeddedResource Include="Views\DepartamentoCRUDForm.resx">
       <DependentUpon>DepartamentoCRUDForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Views\NuevoCandidatoForm.resx">
+      <DependentUpon>NuevoCandidatoForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\UsuarioCRUDForm.resx">
+      <DependentUpon>UsuarioCRUDForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Views\IdiomaCRUDForm.resx">
       <DependentUpon>IdiomaCRUDForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Views\CompetenciaCRUDForm.resx">
       <DependentUpon>CompetenciaCRUDForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\LoginForm.resx">
+      <DependentUpon>LoginForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Views\NuevoEmpleadoForm.resx">
       <DependentUpon>NuevoEmpleadoForm.cs</DependentUpon>
@@ -181,8 +212,11 @@
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
     <None Include="Properties\DataSources\ISO605_WindowsForms.Models.departamento.datasource" />
+    <None Include="Properties\DataSources\ISO605_WindowsForms.Models.empleado.datasource" />
+    <None Include="Properties\DataSources\ISO605_WindowsForms.Models.experiencia_laboral.datasource" />
     <None Include="Properties\DataSources\ISO605_WindowsForms.Models.idioma.datasource" />
     <None Include="Properties\DataSources\ISO605_WindowsForms.Models.posicion.datasource" />
+    <None Include="Properties\DataSources\ISO605_WindowsForms.Models.usuario.datasource" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

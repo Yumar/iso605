@@ -16,6 +16,19 @@ namespace ISO605_WindowsForms
         public MainForm()
         {
             InitializeComponent();
+            //this.menuStrip1.Enabled = false;
+
+            //requestLogin();
+        }
+
+        private void requestLogin() {
+            LoginForm login = new LoginForm();
+            DialogResult result;
+            result = login.ShowDialog();
+
+            if (result == DialogResult.OK) {
+                menuStrip1.Enabled = true;
+            }
         }
 
         private void modificarToolStripMenuItem_Click(object sender, EventArgs e)
@@ -55,6 +68,24 @@ namespace ISO605_WindowsForms
         {
             PuestoCRUDForm puestoForm = new PuestoCRUDForm();
             puestoForm.Show();
+        }
+
+        private void capacitacionesToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            CompetenciaCRUDForm competenciaForm = new CompetenciaCRUDForm();
+            competenciaForm.Show();
+        }
+
+        private void usuariosToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            UsuarioCRUDForm usuarioForm = new UsuarioCRUDForm();
+            usuarioForm.Show();
+        }
+
+        private void nuevoToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            NuevoCandidatoForm candidatoform = new NuevoCandidatoForm();
+            candidatoform.Show();
         }
     }
 }

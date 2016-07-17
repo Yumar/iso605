@@ -18,6 +18,7 @@ namespace ISO605_WindowsForms.Models
         public empleado()
         {
             this.candidatoes = new HashSet<candidato>();
+            this.usuarios = new HashSet<usuario>();
         }
     
         public System.Guid empleado_id { get; set; }
@@ -34,5 +35,7 @@ namespace ISO605_WindowsForms.Models
         public virtual ICollection<candidato> candidatoes { get; set; }
         public virtual candidato candidato { get; set; }
         public virtual posicion posicion1 { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<usuario> usuarios { get; set; }
     }
 }

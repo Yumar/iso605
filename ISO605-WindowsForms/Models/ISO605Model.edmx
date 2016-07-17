@@ -4,7 +4,7 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-      <Schema Namespace="ISO605Model.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+    <Schema Namespace="ISO605Model.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityType Name="candidato">
           <Key>
             <PropertyRef Name="candidato_id" />
@@ -119,6 +119,15 @@
           <Property Name="salario_maximo" Type="money" />
           <Property Name="estado" Type="varchar" MaxLength="50" />
           <Property Name="departamento" Type="uniqueidentifier" Nullable="false" />
+        </EntityType>
+        <EntityType Name="usuario">
+          <Key>
+            <PropertyRef Name="usuario_id" />
+          </Key>
+          <Property Name="usuario_id" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="codigo_usuario" Type="varchar" MaxLength="10" Nullable="false" />
+          <Property Name="contrasena" Type="binary" MaxLength="64" />
+          <Property Name="emplado_id" Type="uniqueidentifier" Nullable="false" />
         </EntityType>
         <Association Name="FK_candidato_capacitacion_candidato">
           <End Role="candidato" Type="Self.candidato" Multiplicity="1" />
@@ -288,6 +297,18 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <Association Name="FK_usuario_empleado">
+          <End Role="empleado" Type="Self.empleado" Multiplicity="1" />
+          <End Role="usuario" Type="Self.usuario" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="empleado">
+              <PropertyRef Name="empleado_id" />
+            </Principal>
+            <Dependent Role="usuario">
+              <PropertyRef Name="emplado_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         <EntityContainer Name="ISO605ModelStoreContainer">
           <EntitySet Name="candidato" EntityType="Self.candidato" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="candidato_capacitacion" EntityType="Self.candidato_capacitacion" Schema="dbo" store:Type="Tables" />
@@ -301,6 +322,7 @@
           <EntitySet Name="experiencia_laboral" EntityType="Self.experiencia_laboral" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="idioma" EntityType="Self.idioma" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="posicion" EntityType="Self.posicion" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="usuario" EntityType="Self.usuario" Schema="dbo" store:Type="Tables" />
           <AssociationSet Name="FK_candidato_capacitacion_candidato" Association="Self.FK_candidato_capacitacion_candidato">
             <End Role="candidato" EntitySet="candidato" />
             <End Role="candidato_capacitacion" EntitySet="candidato_capacitacion" />
@@ -357,9 +379,12 @@
             <End Role="departamento" EntitySet="departamento" />
             <End Role="posicion" EntitySet="posicion" />
           </AssociationSet>
+          <AssociationSet Name="FK_usuario_empleado" Association="Self.FK_usuario_empleado">
+            <End Role="empleado" EntitySet="empleado" />
+            <End Role="usuario" EntitySet="usuario" />
+          </AssociationSet>
         </EntityContainer>
-      </Schema>
-    </edmx:StorageModels>
+      </Schema></edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="ISO605Model" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
@@ -429,6 +454,7 @@
           <NavigationProperty Name="candidatoes" Relationship="Self.FK_candidato_empleado" FromRole="empleado" ToRole="candidato" />
           <NavigationProperty Name="candidato" Relationship="Self.FK_empleado_candidato" FromRole="empleado" ToRole="candidato" />
           <NavigationProperty Name="posicion1" Relationship="Self.FK_empleado_posicion" FromRole="empleado" ToRole="posicion" />
+          <NavigationProperty Name="usuarios" Relationship="ISO605Model.FK_usuario_empleado" FromRole="empleado" ToRole="usuario" />
         </EntityType>
         <EntityType Name="experiencia_laboral">
           <Key>
@@ -603,7 +629,34 @@
             <End Role="candidato" EntitySet="candidatoes" />
             <End Role="idioma" EntitySet="idiomas" />
           </AssociationSet>
+          <EntitySet Name="usuarios" EntityType="ISO605Model.usuario" />
+          <AssociationSet Name="FK_usuario_empleado" Association="ISO605Model.FK_usuario_empleado">
+            <End Role="empleado" EntitySet="empleadoes" />
+            <End Role="usuario" EntitySet="usuarios" />
+          </AssociationSet>
         </EntityContainer>
+        <EntityType Name="usuario">
+          <Key>
+            <PropertyRef Name="usuario_id" />
+          </Key>
+          <Property Name="usuario_id" Type="Guid" Nullable="false" />
+          <Property Name="codigo_usuario" Type="String" Nullable="false" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="contrasena" Type="Binary" MaxLength="64" FixedLength="true" />
+          <Property Name="emplado_id" Type="Guid" Nullable="false" />
+          <NavigationProperty Name="empleado" Relationship="ISO605Model.FK_usuario_empleado" FromRole="usuario" ToRole="empleado" />
+        </EntityType>
+        <Association Name="FK_usuario_empleado">
+          <End Type="ISO605Model.empleado" Role="empleado" Multiplicity="1" />
+          <End Type="ISO605Model.usuario" Role="usuario" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="empleado">
+              <PropertyRef Name="empleado_id" />
+            </Principal>
+            <Dependent Role="usuario">
+              <PropertyRef Name="emplado_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -733,6 +786,16 @@
               <ScalarProperty Name="idioma_id" ColumnName="idioma_id" />
             </EndProperty>
           </AssociationSetMapping>
+          <EntitySetMapping Name="usuarios">
+            <EntityTypeMapping TypeName="ISO605Model.usuario">
+              <MappingFragment StoreEntitySet="usuario">
+                <ScalarProperty Name="emplado_id" ColumnName="emplado_id" />
+                <ScalarProperty Name="contrasena" ColumnName="contrasena" />
+                <ScalarProperty Name="codigo_usuario" ColumnName="codigo_usuario" />
+                <ScalarProperty Name="usuario_id" ColumnName="usuario_id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
         </EntityContainerMapping>
       </Mapping>
     </edmx:Mappings>
