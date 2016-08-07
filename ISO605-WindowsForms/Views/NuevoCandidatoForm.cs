@@ -96,8 +96,9 @@ namespace ISO605_WindowsForms.Views
             entity.empleado_recomienda = (Guid)recomendadoCombo.SelectedValue;
 
             //agregados
-            entity.experiencia_laboral = (List<experiencia_laboral>)experienciaGrid.DataSource;
-            entity.competencias = com
+            entity.experiencia_laboral1 = (List<experiencia_laboral>)experienciaGrid.DataSource;
+            entity.competencias = getCompetenciasChecked();
+            entity.capacitacions1 = (List <capacitacion>)formacionGrid.DataSource;
 
         }
 
@@ -108,7 +109,9 @@ namespace ISO605_WindowsForms.Views
 
         private void guardarBtn_Click(object sender, EventArgs e)
         {
-
+            bindFromUI();
+            dbContext.candidatoes.Add(entity);
+            dbContext.SaveChanges();
         }
     }
 }

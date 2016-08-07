@@ -18,10 +18,10 @@ namespace ISO605_WindowsForms.Models
         public candidato()
         {
             this.empleadoes = new HashSet<empleado>();
-            this.capacitacions = new HashSet<capacitacion>();
             this.competencias = new HashSet<competencia>();
-            this.experiencia_laboral = new HashSet<experiencia_laboral>();
             this.idiomas = new HashSet<idioma>();
+            this.experiencia_laboral1 = new HashSet<experiencia_laboral>();
+            this.capacitacions1 = new HashSet<capacitacion>();
         }
     
         public System.Guid candidato_id { get; set; }
@@ -36,12 +36,12 @@ namespace ISO605_WindowsForms.Models
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<empleado> empleadoes { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<capacitacion> capacitacions { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<competencia> competencias { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<experiencia_laboral> experiencia_laboral { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<idioma> idiomas { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<experiencia_laboral> experiencia_laboral1 { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<capacitacion> capacitacions1 { get; set; }
     }
 }

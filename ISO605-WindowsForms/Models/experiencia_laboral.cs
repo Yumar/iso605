@@ -14,20 +14,14 @@ namespace ISO605_WindowsForms.Models
     
     public partial class experiencia_laboral
     {
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public experiencia_laboral()
-        {
-            this.candidatoes = new HashSet<candidato>();
-        }
-    
         public System.Guid experiencia_laboral_id { get; set; }
         public string nombre_empresa { get; set; }
         public string nombre_posicion { get; set; }
         public System.DateTime fecha_desde { get; set; }
         public System.DateTime fecha_hasta { get; set; }
         public Nullable<decimal> salario { get; set; }
+        public System.Guid candidato_id { get; set; }
     
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<candidato> candidatoes { get; set; }
+        public virtual candidato candidato { get; set; }
     }
 }
